@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Elastic Form Sample</title>
+    <meta name="author" content="Takuro Wada" />
+	
+<style type="text/css">
+	.elastic-form{
+		width: 100%;
+		position: relative;
+		margin: 50px 0;
+	}
+	.elastic-form input{
+		width: 100%;
+		height: 30px;
+		padding: 0 5px;
+		font-size: 20px;
+		border: none;
+	}
+	.elastic-form input:focus{
+		outline: none;
+	}
+	.elastic-form .bar{
+		width: 100%;
+		height: 5px;
+		background: #eee;			
+	}
+	.elastic-form .bar-in{
+		width: 0%;
+		height: 5px;
+		background: #F44;
+		margin: 0 auto;
+		transition: width 0.2s ease-in-out;
+	}
+	.elastic-form .bar-in.active{
+		width: 100%
+	}
+	.elastic-form label{
+		font-family: 'helvetica';
+		font-size: 18px;
+		color: #999;
+		position: absolute;
+		top: 2px;
+		left: 10px;
+		transition: all 0.2s cubic-bezier(.63,0,.55,.96);
+	}
+	.elastic-form.dirty label{
+		top: 7px;
+        left: 5px;;
+		transform-origin:0 0;
+		transform: translateY(-130%) scale(0.8);
+	}
+</style>
+</head>
+<body>
+	<div style="width: 800px; margin: 0 auto; margin-top: 200px;">
+		
+		<form action="">
+			<input type="text" label="Name" class="sample-form" />
+            <input type="text" label="Email (sample@example.com)" class="sample-form" />
+			<input type="text" label="Address" class="sample-form" />
+			<input type="text" label="Country" class="sample-form" />
+		</form>
+	</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../build/jquery.elastic-form.min.js"></script>
+<script>
+    $(".sample-form").elasticForm();
+</script>
+</body>
+</html>
